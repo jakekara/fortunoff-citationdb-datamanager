@@ -20,7 +20,13 @@ Then, move into the folder you just downloaded, like this:
 
     $ cd ./this-directory-name
 
-Make the python script executable by running
+Set up a virtual environment so we can install the dependencies:
+
+    $ python3 -m venv venv
+    $ ./venv/bin/activate
+    $ pip install -r requirements.txt
+
+Make the python script executable by running:
 
     $ chmod 755 DataManager.py
 
