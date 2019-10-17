@@ -68,6 +68,7 @@ def main():
     """
     parser = argparse.ArgumentParser(
         description='Format CSV data for CitationDB')
+    parser.set_defaults(which="invalid")
 
     subparsers = parser.add_subparsers(help='Subcommands')
 
@@ -111,7 +112,7 @@ def main():
     elif(args.which == "downloader"):
         download_from_urls(args.urls_file, args.output_dir)
     else:
-        print("Unsupported command!")
+        parser.print_help()
         exit(-1)
 
 
