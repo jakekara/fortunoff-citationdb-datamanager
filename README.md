@@ -14,16 +14,17 @@ Additionally, this tool can download all four required spreadsheets from URLs co
 
 To set up this application, download this repository using:
 
-    $ git clone this-directory-url
+    $ git clone git@github.com:jakekara/fortunoff-citationdb-datamanager.git
+
 
 Then, move into the folder you just downloaded, like this:
 
-    $ cd ./this-directory-name
+    $ cd ./fortunoff-citationdb-datamanager
 
 Set up a virtual environment so we can install the dependencies:
 
     $ python3 -m venv venv
-    $ ./venv/bin/activate
+    $ . venv/bin/activate
     $ pip install -r requirements.txt
 
 Make the python script executable by running:
