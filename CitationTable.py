@@ -34,10 +34,19 @@ class CitationTable:
         return self.get_data().as_dict(orient="index")
         
     def json(self):
-        return self.get_data().to_json(orient="index")
+        try:
+            return self.get_data().to_json(orient="index")
+        except Exception as e:
+            df = self.get_data()
+            print (df[df.index.map(lambda x: "E" in x)])
+            print (self.get_data().index.value_counts().to_frame().head())
+            raise Exception("Error converting file '%s' to JSON: %s" % (self.__fname, e))
     
     def csv(self):
-        return self.get_data().to_csv(index_label="id")
+        try:
+            return self.get_data().to_csv(index_label="id")
+        except Exception as e:
+            raise Exception("Error converting file '%s' to CSV: %s" % (self.__fname, e))
     
     def to_csv_file(self, fname):
         open(fname,"w").write(self.csv())
