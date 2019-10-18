@@ -37,7 +37,6 @@ class CitationTable:
         try:
             return self.get_data().to_json(orient="index")
         except Exception as e:
-            df = self.get_data()
             raise Exception("Error converting file '%s' to JSON: %s" % (self.__fname, e))
     
     def csv(self):
