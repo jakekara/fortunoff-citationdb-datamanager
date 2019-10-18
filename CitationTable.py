@@ -38,8 +38,6 @@ class CitationTable:
             return self.get_data().to_json(orient="index")
         except Exception as e:
             df = self.get_data()
-            print (df[df.index.map(lambda x: "E" in x)])
-            print (self.get_data().index.value_counts().to_frame().head())
             raise Exception("Error converting file '%s' to JSON: %s" % (self.__fname, e))
     
     def csv(self):
